@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milu Nutrition & Balance | Ingeniería Alimentaria</title>
+    <title>Milu Nutrition & Balance | UdeA</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f7f6; color: #2c3e50; }
-        .container { max-width: 480px; margin: 0 auto; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8f9fa; color: #333; }
+        .container { max-width: 480px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
         
         .portada { width: 100%; height: auto; display: block; }
         
-        .leyenda { padding: 30px 25px; text-align: justify; background: #fff; }
-        .leyenda h2 { color: #003990; text-align: center; margin-bottom: 15px; }
-        .leyenda p { font-size: 15px; line-height: 1.6; color: #444; }
+        .leyenda { padding: 30px 25px; text-align: justify; }
+        .leyenda h2 { color: #003990; text-align: center; font-size: 22px; }
+        .leyenda p { font-size: 15px; line-height: 1.6; color: #555; }
 
         .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px; }
-        .btn-kit { border: none; border-radius: 8px; padding: 18px 5px; color: white; font-size: 13px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .btn-kit { border: none; border-radius: 8px; padding: 18px 5px; color: white; font-size: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
         .btn-green { background-color: #70b324; }
         .btn-glow { background-color: #d63384; }
         .btn-tropical { background-color: #f0a530; }
@@ -23,31 +23,33 @@
         .btn-sweet { background-color: #2b3e50; }
         .btn-defensa { background-color: #fd7e14; }
 
-        .info-desplegada { margin: 10px 20px 30px 20px; padding: 25px; border-radius: 15px; background: #fff; display: none; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .info-desplegada h2 { font-size: 20px; margin-top: 0; }
-        .info-desplegada ul { text-align: left; padding-left: 20px; font-size: 14px; line-height: 1.7; }
+        .info-desplegada { margin: 10px 20px 30px 20px; padding: 20px; border-radius: 12px; display: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-        .variedades { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
-        .variedades img { width: 100%; border-radius: 10px; }
+        .titulo-seccion { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; letter-spacing: 1px; margin-top: 20px; }
+        
+        /* Contenedor del Catálogo Individual */
+        .producto-individual { padding: 20px; border-bottom: 5px solid #f0f2f5; }
+        .crop-container { width: 100%; height: 350px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .crop-container img { width: 300%; height: 200%; object-fit: cover; }
 
-        footer { padding: 40px 20px; text-align: center; border-top: 2px solid #003990; background: #fdfdfd; }
+        footer { padding: 40px 20px; text-align: center; border-top: 2px solid #003990; background: #fdfdfd; font-size: 14px; }
         footer a { color: #003990; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 1. PORTADA (Foto del círculo) -->
-        <img src="IMG_7518.png" class="portada" alt="Milu Portada Principal">
+        <!-- 1. PORTADA (Círculo) -->
+        <img src="IMG_7518.png" class="portada" alt="Milu Portada">
 
-        <!-- 2. LEYENDA TÉCNICA -->
+        <!-- 2. LEYENDA -->
         <div class="leyenda">
-            <h2>Ingeniería para tu Bienestar</h2>
-            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería alimentaria enfocado en la optimización nutricional. Nuestros kits de frutas congeladas utilizan tecnología de conservación para mantener la integridad de los micronutrientes y compuestos bioactivos, ofreciendo una solución práctica con base científica.</p>
+            <h2>Ingeniería Nutricional</h2>
+            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería de alimentos que utiliza tecnología de congelación para preservar la integridad bioquímica de cada ingrediente.</p>
         </div>
 
-        <!-- 3. INTERACTIVIDAD TÉCNICA -->
-        <div style="text-align:center; font-weight:bold; color:#003990; letter-spacing: 1px;">ANÁLISIS FUNCIONAL POR REFERENCIA:</div>
+        <!-- 3. INTERACTIVIDAD -->
+        <div style="text-align:center; font-weight:bold; color:#003990; font-size: 14px;">ANÁLISIS TÉCNICO:</div>
         <div class="grid-botones">
             <button class="btn-kit btn-green" onclick="mostrarInfo('green')">Green Focus</button>
             <button class="btn-kit btn-glow" onclick="mostrarInfo('glow')">Glow & Skin</button>
@@ -58,67 +60,84 @@
         </div>
 
         <div id="caja-info" class="info-desplegada">
-            <h2 id="info-titulo"></h2>
-            <div id="info-cuerpo"></div>
+            <h3 id="info-titulo" style="margin-top:0;"></h3>
+            <p id="info-cuerpo" style="font-size:14px; color:#555;"></p>
         </div>
 
-        <!-- 4. VARIEDADES ABAJO -->
-        <div class="variedades">
-            <img src="IMG_7519.png" alt="Línea de Producción Milu">
-            <img src="IMG_7520.png" alt="Portafolio de Productos">
+        <!-- 4. CATÁLOGO INDIVIDUAL (Uno debajo del otro) -->
+        <div class="titulo-seccion">PORTAFOLIO INDIVIDUAL</div>
+
+        <!-- Defensa Activa -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 0% 0%;">
+            </div>
+            <p><strong>Defensa Activa:</strong> Naranja, zanahoria, jengibre y cúrcuma para el refuerzo inmunológico.</p>
         </div>
 
-        <!-- 5. PIE DE PÁGINA PROFESIONAL -->
+        <!-- Glow & Skin -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 50% 0%;">
+            </div>
+            <p><strong>Glow & Skin:</strong> Fresa, mora y remolacha. Alta concentración de antocianinas.</p>
+        </div>
+
+        <!-- Reset Digest -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 100% 0%;">
+            </div>
+            <p><strong>Reset Digest:</strong> Piña, apio y pepino. Enzimas naturales para la digestión.</p>
+        </div>
+
+        <!-- Green Focus -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 0% 100%;">
+            </div>
+            <p><strong>Green Focus:</strong> Manzana verde, espinaca y kiwi. Energía y hierro para la concentración.</p>
+        </div>
+
+        <!-- Tropical Recovery -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 50% 100%;">
+            </div>
+            <p><strong>Tropical Recovery:</strong> Mango, maracuyá y chía. Reposición de glucógeno y electrolitos.</p>
+        </div>
+
+        <!-- Sweet Dreams -->
+        <div class="producto-individual">
+            <div class="crop-container">
+                <img src="IMG_7520.png" style="object-position: 100% 100%;">
+            </div>
+            <p><strong>Sweet Dreams:</strong> Cereza, pera y canela. Precursores de melatonina para el descanso.</p>
+        </div>
+
+        <!-- 5. FOOTER -->
         <footer>
-            <p style="margin:0; font-size: 16px; color: #003990;"><strong>Luisa Vanegas</strong></p>
-            <p style="margin:5px 0;">Estudiante de Ingeniería de Alimentos</p>
-            <p style="margin:0; color: #777;">Universidad de Antioquia | Medellín</p>
-            <hr style="width:50px; border: 1px solid #ff8c00; margin: 15px auto;">
-            <p>Instagram: <a href="https://www.instagram.com/milu_nb11?igsh=MXgzOHAwdnByM29qNQ%3D%3D&utm_source=qr" target="_blank">@milu_nb11</a></p>
+            <p><strong>Luisa Vanegas</strong></p>
+            <p>Ingeniería de Alimentos | Universidad de Antioquia</p>
+            <p>Medellín, Colombia</p>
+            <p style="margin-top:15px;">Instagram: <a href="https://www.instagram.com/milu_nb11" target="_blank">@milu_nb11</a></p>
         </footer>
     </div>
 
     <script>
         const kits = {
-            green: { 
-                t: "🍏 Green Focus", 
-                c: "#70b324",
-                d: "<ul><li><strong>Clorofila:</strong> Optimización del transporte de oxígeno hemoglobínico.</li><li><strong>Hierro (Espinaca):</strong> Cofactor esencial en procesos cognitivos.</li><li><strong>Vitamina C (Limón):</strong> Mejora la biodisponibilidad del hierro no hemínico.</li></ul>"
-            },
-            glow: { 
-                t: "🍓 Glow & Skin", 
-                c: "#d63384",
-                d: "<ul><li><strong>Antocianinas:</strong> Potente acción contra el estrés oxidativo celular.</li><li><strong>Remolacha:</strong> Aporte de nitratos para mejorar la microcirculación dérmica.</li><li><strong>Fitonutrientes:</strong> Precursores de colágeno natural.</li></ul>"
-            },
-            tropical: { 
-                t: "🥭 Tropical Recovery", 
-                c: "#f0a530",
-                d: "<ul><li><strong>Electrolitos:</strong> Reposición de sodio y potasio post-esfuerzo.</li><li><strong>Chía (Omega-3):</strong> Propiedades antiinflamatorias sistémicas.</li><li><strong>Glúcidos:</strong> Recuperación rápida de los depósitos de glucógeno.</li></ul>"
-            },
-            reset: { 
-                t: "🍍 Reset Digest", 
-                c: "#a3d9c9",
-                d: "<ul><li><strong>Bromelina (Piña):</strong> Enzima proteolítica que facilita la digestión.</li><li><strong>Fibra Dietaria:</strong> Estimulación del tránsito intestinal y microbiota.</li><li><strong>Mentol:</strong> Acción carminativa y relajante del tracto digestivo.</li></ul>"
-            },
-            sweet: { 
-                t: "🍒 Sweet Dreams", 
-                c: "#2b3e50",
-                d: "<ul><li><strong>Triptófano (Cereza):</strong> Aminoácido precursor de la serotonina y melatonina.</li><li><strong>Polifenoles:</strong> Reducción de la inflamación nocturna.</li><li><strong>Canela:</strong> Estabilización de la respuesta glucémica basal.</li></ul>"
-            },
-            defensa: { 
-                t: "🛡️ Defensa Activa", 
-                c: "#fd7e14",
-                d: "<ul><li><strong>Ácido Ascórbico:</strong> Refuerzo de la respuesta inmunitaria innata.</li><li><strong>Gingerol (Jengibre):</strong> Propiedades termogénicas y antivirales.</li><li><strong>Curcumina:</strong> Modulador de la respuesta inflamatoria.</li></ul>"
-            }
+            green: { t: "🍏 Green Focus", d: "Aporte de hierro y clorofila para optimizar procesos cognitivos." },
+            glow: { t: "🍓 Glow & Skin", d: "Antocianinas que combaten el estrés oxidativo celular." },
+            tropical: { t: "🥭 Tropical Recovery", d: "Recuperación de electrolitos y energía de forma natural." },
+            reset: { t: "🍍 Reset Digest", d: "Bromelina natural que facilita la digestión proteica." },
+            sweet: { t: "🍒 Sweet Dreams", d: "Triptófano precursor de serotonina para un sueño reparador." },
+            defensa: { t: "🛡️ Defensa Activa", d: "Ácido ascórbico y gingerol para la respuesta inmunitaria." }
         };
-
         function mostrarInfo(k) {
             const info = kits[k];
             const caja = document.getElementById('caja-info');
             document.getElementById('info-titulo').innerHTML = info.t;
-            document.getElementById('info-titulo').style.color = info.c;
             document.getElementById('info-cuerpo').innerHTML = info.d;
-            caja.style.border = `2px solid ${info.c}`;
             caja.style.display = 'block';
             caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
