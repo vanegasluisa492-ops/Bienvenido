@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milu Nutrition & Balance | UdeA</title>
+    <title>Milu Nutrition & Balance</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8f9fa; color: #333; }
         .container { max-width: 480px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
         
-        /* Portada */
+        /* 1. Portada: Hola Medellín (Imagen del círculo) */
         .portada { width: 100%; height: auto; display: block; }
         
-        .leyenda { padding: 25px; text-align: justify; }
-        .leyenda h2 { color: #003990; text-align: center; margin-bottom: 15px; }
-        .leyenda p { font-size: 15px; line-height: 1.6; color: #555; margin: 0; }
+        .leyenda { padding: 25px; text-align: center; }
+        .leyenda h2 { color: #003990; margin-bottom: 10px; }
+        .leyenda p { font-size: 15px; line-height: 1.6; color: #555; text-align: justify; }
 
-        /* Botones */
-        .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
+        /* 2. Análisis Técnico e Interactividad */
+        .seccion-interactiva { padding: 0 20px 20px 20px; }
+        .titulo-analisis { text-align: center; font-weight: bold; color: #003990; margin-bottom: 15px; }
+        
+        .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .btn-kit { border: none; border-radius: 8px; padding: 15px 5px; color: white; font-size: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        
+        /* Colores de botones */
         .btn-green { background-color: #70b324; }
         .btn-glow { background-color: #d63384; }
         .btn-tropical { background-color: #f0a530; }
@@ -25,77 +30,102 @@
         .btn-sweet { background-color: #2b3e50; }
         .btn-defensa { background-color: #fd7e14; }
 
-        .info-desplegada { margin: 0 20px 20px 20px; padding: 20px; border-radius: 12px; display: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 2px solid #003990; }
+        .info-desplegada { margin-top: 15px; padding: 20px; border-radius: 12px; display: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #003990; }
+        .info-desplegada h3 { margin: 0 0 10px 0; font-size: 18px; }
+        .info-desplegada p { margin: 5px 0; font-size: 14px; line-height: 1.4; }
 
-        /* Catálogo corregido */
-        .titulo-seccion { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; margin-top: 20px; font-weight: bold; }
-        .producto-individual { padding: 20px; border-bottom: 2px solid #eee; text-align: center; }
-        .img-producto { width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .desc-producto { font-size: 14px; line-height: 1.5; color: #444; margin: 0; }
+        /* 3. Portafolio: Los 6 paquetes individuales */
+        .titulo-portafolio { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; font-weight: bold; margin-top: 20px; }
+        .img-final { width: 100%; display: block; }
 
-        footer { padding: 40px 20px; text-align: center; border-top: 2px solid #003990; background: #fdfdfd; }
+        footer { padding: 30px 20px; text-align: center; border-top: 1px solid #eee; }
         footer a { color: #003990; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 1. PORTADA -->
-        <img src="IMG_7518.png" class="portada" alt="Milu Medellín">
+        <!-- PORTADA: Hola Medellín (IMG_7518.png) -->
+        <img src="IMG_7518.png" class="portada">
 
-        <!-- 2. LEYENDA -->
         <div class="leyenda">
             <h2>Ingeniería para tu Bienestar</h2>
-            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería de alimentos enfocado en la optimización nutricional mediante tecnología de conservación.</p>
+            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería enfocado en optimizar la nutrición diaria. Aplicamos procesos técnicos para asegurar que cada kit conserve sus propiedades funcionales de forma natural.</p>
         </div>
 
-        <!-- 3. INTERACTIVIDAD -->
-        <div style="text-align:center; font-weight:bold; color:#003990; padding-top:10px;">ANÁLISIS TÉCNICO:</div>
-        <div class="grid-botones">
-            <button class="btn-kit btn-green" onclick="mostrarInfo('green')">Green Focus</button>
-            <button class="btn-kit btn-glow" onclick="mostrarInfo('glow')">Glow & Skin</button>
-            <button class="btn-kit btn-tropical" onclick="mostrarInfo('tropical')">Tropical Recovery</button>
-            <button class="btn-kit btn-reset" onclick="mostrarInfo('reset')">Reset Digest</button>
-            <button class="btn-kit btn-sweet" onclick="mostrarInfo('sweet')">Sweet Dreams</button>
-            <button class="btn-kit btn-defensa" onclick="mostrarInfo('defensa')">Defensa Activa</button>
+        <!-- ANÁLISIS TÉCNICO -->
+        <div class="seccion-interactiva">
+            <div class="titulo-analisis">ANÁLISIS TÉCNICO:</div>
+            <div class="grid-botones">
+                <button class="btn-kit btn-green" onclick="mostrarInfo('green')">Green Focus</button>
+                <button class="btn-kit btn-glow" onclick="mostrarInfo('glow')">Glow & Skin</button>
+                <button class="btn-kit btn-tropical" onclick="mostrarInfo('tropical')">Tropical Recovery</button>
+                <button class="btn-kit btn-reset" onclick="mostrarInfo('reset')">Reset Digest</button>
+                <button class="btn-kit btn-sweet" onclick="mostrarInfo('sweet')">Sweet Dreams</button>
+                <button class="btn-kit btn-defensa" onclick="mostrarInfo('defensa')">Defensa Activa</button>
+            </div>
+
+            <div id="caja-info" class="info-desplegada">
+                <h3 id="info-titulo"></h3>
+                <p id="info-ingredientes" style="font-style: italic; color: #666;"></p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+                <p id="info-beneficio"></p>
+            </div>
         </div>
 
-        <div id="caja-info" class="info-desplegada">
-            <h3 id="info-titulo" style="margin:0 0 10px 0;"></h3>
-            <p id="info-cuerpo" style="margin:0;"></p>
-        </div>
+        <!-- PORTAFOLIO: Los 6 Paquetes (IMG_7520.png) -->
+        <div class="titulo-portafolio">PORTAFOLIO DE PRODUCTOS</div>
+        <img src="IMG_7520.png" class="img-final">
+        <p style="text-align:center; font-size:14px; padding:15px 20px; color:#555;">Kits de frutas y verduras 100% naturales, picados y congelados listos para licuar.</p>
 
-        <!-- 4. CATÁLOGO INDIVIDUAL (Aquí se arreglaron las imágenes) -->
-        <div class="titulo-seccion">PORTAFOLIO DE PRODUCTOS</div>
-
-        <div class="producto-individual">
-            <img src="IMG_7520.png" class="img-producto">
-            <p class="desc-producto"><strong>Catálogo Completo:</strong> Nuestros 6 sabores funcionales diseñados con precisión técnica.</p>
-        </div>
-
-        <!-- 5. FOOTER -->
+        <!-- FOOTER -->
         <footer>
             <p><strong>Luisa Vanegas</strong></p>
-            <p>Estudiante de Ingeniería de Alimentos</p>
-            <p>Universidad de Antioquia | Medellín</p>
-            <p style="margin-top:15px;">Instagram: <a href="https://www.instagram.com/milu_nb11" target="_blank">@milu_nb11</a></p>
+            <p>Estudiante de Ingeniería de Alimentos - UdeA</p>
+            <p>Instagram: <a href="https://www.instagram.com/milu_nb11" target="_blank">@milu_nb11</a></p>
         </footer>
     </div>
 
     <script>
         const kits = {
-            green: { t: "🍏 Green Focus", d: "Aporte de hierro y clorofila para optimizar procesos cognitivos." },
-            glow: { t: "🍓 Glow & Skin", d: "Antocianinas que combaten el estrés oxidativo celular." },
-            tropical: { t: "🥭 Tropical Recovery", d: "Recuperación de electrolitos y energía de forma natural." },
-            reset: { t: "🍍 Reset Digest", d: "Bromelina natural que facilita la digestión proteica." },
-            sweet: { t: "🍒 Sweet Dreams", d: "Triptófano precursor de serotonina para un sueño reparador." },
-            defensa: { t: "🛡️ Defensa Activa", d: "Ácido ascórbico y gingerol para la respuesta inmunitaria." }
+            green: { 
+                t: "🍏 Green Focus", 
+                i: "Ingredientes: Manzana verde, espinaca, kiwi, limón.",
+                b: "Beneficio: Aporte natural de hierro y clorofila para mantenerte alerta, enfocado y con energía mental." 
+            },
+            glow: { 
+                t: "🍓 Glow & Skin", 
+                i: "Ingredientes: Fresa, mora, arándano, remolacha.",
+                b: "Beneficio: Favorece la regeneración celular y la salud de la piel. Tu secreto diario para una piel radiante." 
+            },
+            tropical: { 
+                t: "🥭 Tropical Recovery", 
+                i: "Ingredientes: Mango, maracuyá, semillas de chía.",
+                b: "Beneficio: Ayuda a la recuperación post-ejercicio, reponiendo electrolitos y energía de forma natural." 
+            },
+            reset: { 
+                t: "🍍 Reset Digest", 
+                i: "Ingredientes: Piña, apio, pepino, menta.",
+                b: "Beneficio: Ayuda a la digestión y reduce la inflamación. Una limpieza natural para tu cuerpo." 
+            },
+            sweet: { 
+                t: "🍒 Sweet Dreams", 
+                i: "Ingredientes: Cereza, pera, canela.",
+                b: "Beneficio: Contiene precursores de melatonina que promueven la relajación y un sueño reparador." 
+            },
+            defensa: { 
+                t: "🛡️ Defensa Activa", 
+                i: "Ingredientes: Naranja, zanahoria, jengibre, cúrcuma.",
+                b: "Beneficio: Aporte natural de Vitamina C y antioxidantes que ayudan a fortalecer el sistema inmunológico." 
+            }
         };
+
         function mostrarInfo(k) {
             const info = kits[k];
             const caja = document.getElementById('caja-info');
             document.getElementById('info-titulo').innerHTML = info.t;
-            document.getElementById('info-cuerpo').innerHTML = info.d;
+            document.getElementById('info-ingredientes').innerHTML = info.i;
+            document.getElementById('info-beneficio').innerHTML = info.b;
             caja.style.display = 'block';
             caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
