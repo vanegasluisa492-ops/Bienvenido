@@ -3,104 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milu Nutrition & Balance</title>
+    <title>Milu Nutrition</title>
     <style>
-        body { font-family: 'Helvetica Neue', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
-        .wrapper-milu { max-width: 480px; margin: 0 auto; min-height: 100vh; border: 1px solid #eee; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #fff; }
+        .main-container { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; }
         
-        /* FOTO 1: HOLA MEDELLÍN (Círculo) - DEBE IR ARRIBA */
-        .img-superior-principal { width: 100%; height: auto; display: block; }
+        /* LA FOTO DEL CÍRCULO "HOLA MEDELLÍN" - POSICIÓN 1 */
+        .foto-bienvenida { width: 100%; order: 1; }
         
-        .texto-intro { padding: 30px 20px; text-align: center; }
-        .texto-intro h2 { color: #003990; font-size: 22px; margin-bottom: 15px; }
-        .texto-intro p { font-size: 15px; line-height: 1.5; text-align: justify; color: #444; }
+        /* TEXTO DE INTRODUCCIÓN - POSICIÓN 2 */
+        .intro-box { order: 2; padding: 20px; text-align: center; }
+        .intro-box h2 { color: #003990; }
 
-        /* BLOQUE INTERACTIVO */
-        .contenedor-tecnico { padding: 0 20px 30px 20px; }
-        .label-analisis { text-align: center; font-weight: 800; color: #003990; margin-bottom: 20px; letter-spacing: 1px; }
+        /* BOTONES INTERACTIVOS - POSICIÓN 3 */
+        .interactivo-box { order: 3; padding: 20px; background: #f9f9f9; }
+        .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .btn { border: none; padding: 15px; color: #fff; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 11px; text-transform: uppercase; }
         
-        .menu-sabores { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .boton-sabor { border: none; border-radius: 6px; padding: 16px 5px; color: white; font-size: 11px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: transform 0.2s; }
-        .boton-sabor:active { transform: scale(0.95); }
-        
-        .c-green { background-color: #70b324; }
-        .c-glow { background-color: #d63384; }
-        .c-tropical { background-color: #f0a530; }
-        .c-reset { background-color: #a3d9c9; color: #222; }
-        .c-sweet { background-color: #2b3e50; }
-        .c-defensa { background-color: #fd7e14; }
+        /* Colores */
+        .g { background: #70b324; } .gl { background: #d63384; }
+        .t { background: #f0a530; } .r { background: #a3d9c9; color: #333; }
+        .s { background: #2b3e50; } .d { background: #fd7e14; }
 
-        .pizarra-datos { margin-top: 20px; padding: 20px; border-radius: 10px; display: none; background: #fafafa; border: 2.5px solid #003990; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .pizarra-datos h3 { margin: 0 0 10px 0; font-size: 18px; color: #003990; }
-        .pizarra-datos p { margin: 8px 0; font-size: 14px; line-height: 1.4; }
+        #display-tecnico { margin-top: 15px; padding: 15px; border: 2px solid #003990; border-radius: 10px; display: none; background: white; }
 
-        /* SECCIÓN PORTAFOLIO - DEBE IR ABAJO */
-        .franja-azul { background: #003990; color: white; padding: 15px; text-align: center; font-size: 17px; font-weight: bold; }
-        .img-inferior-portafolio { width: 100%; display: block; }
+        /* LA FOTO DE LOS 6 PAQUETES - POSICIÓN 4 (AL FINAL) */
+        .portafolio-titulo { order: 4; background: #003990; color: #fff; text-align: center; padding: 10px; font-weight: bold; margin-top: 20px; }
+        .foto-portafolio { width: 100%; order: 5; }
 
-        .pie-pagina { padding: 40px 20px; text-align: center; background: #fdfdfd; font-size: 14px; }
-        .pie-pagina a { color: #003990; text-decoration: none; font-weight: bold; }
+        footer { order: 6; text-align: center; padding: 30px; font-size: 13px; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <div class="wrapper-milu">
-        <!-- 1. IMAGEN DE PORTADA (EL CÍRCULO) -->
-        <img src="IMG_7518.png" class="img-superior-principal">
+    <div class="main-container">
+        <!-- 1. ESTA ES LA FOTO QUE DEBE SALIR ARRIBA -->
+        <img src="IMG_7518.png" class="foto-bienvenida" alt="Círculo Milu Medellín">
 
-        <div class="texto-intro">
+        <div class="intro-box">
             <h2>Ingeniería para tu Bienestar</h2>
-            <p><strong>Milu Nutrition & Balance</strong> aplica principios de ingeniería de alimentos para ofrecerte mezclas funcionales que conservan su valor biológico de forma práctica y deliciosa.</p>
+            <p>Optimización nutricional mediante tecnología de conservación.</p>
         </div>
 
-        <div class="contenedor-tecnico">
-            <div class="label-analisis">ANÁLISIS TÉCNICO POR SABOR:</div>
-            <div class="menu-sabores">
-                <button class="boton-sabor c-green" onclick="verData('green')">Green Focus</button>
-                <button class="boton-sabor c-glow" onclick="verData('glow')">Glow & Skin</button>
-                <button class="boton-sabor c-tropical" onclick="verData('tropical')">Tropical Recovery</button>
-                <button class="boton-sabor c-reset" onclick="verData('reset')">Reset Digest</button>
-                <button class="boton-sabor c-sweet" onclick="verData('sweet')">Sweet Dreams</button>
-                <button class="boton-sabor c-defensa" onclick="verData('defensa')">Defensa Activa</button>
+        <div class="interactivo-box">
+            <p style="text-align: center; font-weight: bold; color: #003990;">ANÁLISIS TÉCNICO:</p>
+            <div class="grid-botones">
+                <button class="btn g" onclick="show('green')">Green Focus</button>
+                <button class="btn gl" onclick="show('glow')">Glow & Skin</button>
+                <button class="btn t" onclick="show('tropical')">Tropical Recovery</button>
+                <button class="btn r" onclick="show('reset')">Reset Digest</button>
+                <button class="btn s" onclick="show('sweet')">Sweet Dreams</button>
+                <button class="btn d" onclick="show('defensa')">Defensa Activa</button>
             </div>
 
-            <div id="pizarra" class="pizarra-datos">
-                <h3 id="p-titulo"></h3>
-                <p id="p-ingredientes"></p>
-                <p id="p-beneficio"></p>
+            <div id="display-tecnico">
+                <h3 id="txt-t" style="margin-top:0;"></h3>
+                <p id="txt-i"></p>
+                <p id="txt-b"></p>
             </div>
         </div>
 
-        <!-- 2. SECCIÓN PORTAFOLIO (LOS 6 PAQUETES) -->
-        <div class="franja-azul">PORTAFOLIO DE PRODUCTOS</div>
-        <img src="IMG_7520.png" class="img-inferior-portafolio">
-        <p style="text-align:center; font-size:13px; padding:15px; color:#666;">Nutrición balanceada con rigor científico.</p>
+        <!-- 2. ESTA ES LA FOTO QUE DEBE SALIR ABAJO -->
+        <div class="portafolio-titulo">PORTAFOLIO DE PRODUCTOS</div>
+        <img src="IMG_7520.png" class="foto-portafolio" alt="6 Sabores Milu">
 
-        <div class="pie-pagina">
-            <p><strong>Luisa Vanegas</strong></p>
-            <p>Ingeniería de Alimentos - UdeA</p>
-            <p>Instagram: <a href="https://www.instagram.com/milu_nb11" target="_blank">@milu_nb11</a></p>
+        <footer>
+            <p><strong>Luisa Vanegas</strong><br>Estudiante de Ingeniería de Alimentos - UdeA</p>
         </div>
     </div>
 
     <script>
-        const sabordata = {
-            green: { t: "🍏 Green Focus", i: "Manzana verde, espinaca, kiwi, limón", b: "Aporte de hierro y clorofila para optimizar la concentración y el enfoque mental." },
-            glow: { t: "🍓 Glow & Skin", i: "Fresa, mora, arándano, remolacha", b: "Alto contenido de antocianinas que favorecen la salud de la piel y regeneración celular." },
-            tropical: { t: "🥭 Tropical Recovery", i: "Mango, maracuyá, semillas de chía", b: "Restauración de electrolitos y aporte energético natural post-actividad física." },
-            reset: { t: "🍍 Reset Digest", i: "Piña, apio, pepino, menta", b: "Mejora el tránsito intestinal y reduce procesos inflamatorios digestivos." },
-            sweet: { t: "🍒 Sweet Dreams", i: "Cereza, pera, canela", b: "Contiene precursores de melatonina que facilitan la inducción al sueño profundo." },
-            defensa: { t: "🛡️ Defensa Activa", i: "Naranja, zanahoria, jengibre, cúrcuma", b: "Concentrado de Vitamina C y compuestos bioactivos para el sistema inmune." }
+        const data = {
+            green: { t: "🍏 Green Focus", i: "Manzana verde, espinaca, kiwi, limón", b: "Aporte de hierro y clorofila para energía mental." },
+            glow: { t: "🍓 Glow & Skin", i: "Fresa, mora, arándano, remolacha", b: "Regeneración celular y salud de la piel." },
+            tropical: { t: "🥭 Tropical Recovery", i: "Mango, maracuyá, chía", b: "Electrolitos y energía post-ejercicio." },
+            reset: { t: "🍍 Reset Digest", i: "Piña, apio, pepino, menta", b: "Digestión y desinflamación." },
+            sweet: { t: "🍒 Sweet Dreams", i: "Cereza, pera, canela", b: "Precursores de melatonina para descansar." },
+            defensa: { t: "🛡️ Defensa Activa", i: "Naranja, zanahoria, jengibre, cúrcuma", b: "Vitamina C para el sistema inmune." }
         };
 
-        function verData(k) {
-            const d = sabordata[k];
-            const p = document.getElementById('pizarra');
-            document.getElementById('p-titulo').innerHTML = d.t;
-            document.getElementById('p-ingredientes').innerHTML = "<b>Ingredientes:</b> " + d.i;
-            document.getElementById('p-beneficio').innerHTML = "<b>Beneficio Técnico:</b> " + d.b;
-            p.style.display = 'block';
-            p.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        function show(k) {
+            const item = data[k];
+            document.getElementById('display-tecnico').style.display = 'block';
+            document.getElementById('txt-t').innerText = item.t;
+            document.getElementById('txt-i').innerHTML = "<b>Ingredientes:</b> " + item.i;
+            document.getElementById('txt-b').innerHTML = "<b>Beneficio:</b> " + item.b;
+            document.getElementById('display-tecnico').scrollIntoView({behavior: "smooth"});
         }
     </script>
 </body>
