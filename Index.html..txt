@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milu Nutrition & Balance | Guía de Bienestar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1A4B82;
+            --green-focus: #76B82A;
+            --glow-skin: #D63384;
+            --tropical-recovery: #FBB03B;
+            --reset-digest: #A8D5BA;
+            --sweet-dreams: #2C3E50;
+            --defensa-activa: #FF8C00;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 25px;
+            padding: 20px;
+        }
+
+        .logo-text {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 1rem;
+            margin-top: -5px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .kit-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn-select {
+            padding: 12px 8px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-select:active { transform: scale(0.95); }
+
+        .bg-green { background-color: var(--green-focus); }
+        .bg-glow { background-color: var(--glow-skin); }
+        .bg-tropical { background-color: var(--tropical-recovery); }
+        .bg-reset { background-color: var(--reset-digest); color: #333; }
+        .bg-dreams { background-color: var(--sweet-dreams); }
+        .bg-defensa { background-color: var(--defensa-activa); }
+
+        .kit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: left;
+            border-top: 10px solid;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 { margin-top: 0; font-size: 1.4rem; color: #333; }
+        h3 { font-size: 1rem; color: var(--primary-blue); margin: 15px 0 5px 0; border-bottom: 1px solid #eee; }
+        p { font-size: 0.95rem; line-height: 1.5; margin: 0; color: #555; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .contact-info {
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo-text">MILU</h1>
+        <p class="subtitle">Nutrition & Balance</p>
+        <p><strong>Selecciona tu Kit para descubrir su poder:</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="kit-selector">
+            <button class="btn-select bg-green" onclick="showKit('green')">Green Focus</button>
+            <button class="btn-select bg-glow" onclick="showKit('glow')">Glow & Skin</button>
+            <button class="btn-select bg-tropical" onclick="showKit('tropical')">Tropical Recovery</button>
+            <button class="btn-select bg-reset" onclick="showKit('reset')">Reset Digest</button>
+            <button class="btn-select bg-dreams" onclick="showKit('dreams')">Sweet Dreams</button>
+            <button class="btn-select bg-defensa" onclick="showKit('defensa')">Defensa Activa</button>
+        </div>
+
+        <!-- GREEN FOCUS -->
+        <div id="green" class="kit-card" style="border-color: var(--green-focus);">
+            <h2>🍏 Green Focus</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>Sinergia de Hierro + Vitamina C. La espinaca aporta hierro para la oxigenación cerebral, mientras que el kiwi y limón aseguran su máxima absorción.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Lícualo con agua de coco fría o agua mineral para un efecto refrescante y ligero.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>Controlamos la oxidación mediante un proceso de picado y congelación inmediata, protegiendo la clorofila activa.</p>
+        </div>
+
+        <!-- GLOW & SKIN -->
+        <div id="glow" class="kit-card" style="border-color: var(--glow-skin);">
+            <h2>💖 Glow & Skin</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>Los nitratos de la remolacha mejoran la microcirculación capilar, permitiendo que las antocianinas de los frutos rojos nutran tu piel desde adentro.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Lícualo con leche de almendras o yogurt griego para un batido cremoso rico en Vitamina E.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>El color vibrante es indicador de betalaínas preservadas, antioxidantes clave para la regeneración celular.</p>
+        </div>
+
+        <!-- TROPICAL RECOVERY -->
+        <div id="tropical" class="kit-card" style="border-color: var(--tropical-recovery);">
+            <h2>🏃‍♂️ Tropical Recovery</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>Carga de electrolitos naturales (Potasio y Magnesio) y Omega-3 vegetal de la chía para reducir la inflamación post-entrenamiento.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Ideal con agua de coco o simplemente agua para reponer energía rápidamente.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>La chía actúa como agente hidrofílico, ayudando a mantener la hidratación celular por más tiempo.</p>
+        </div>
+
+        <!-- RESET DIGEST -->
+        <div id="reset" class="kit-card" style="border-color: var(--reset-digest);">
+            <h2>🍍 Reset Digest</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>Contiene bromelina natural de la piña fresca, una enzima que facilita la ruptura de proteínas y mejora la digestión.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Mézclalo con agua y unas gotas de jengibre para un efecto desinflamatorio total.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>Al ser un producto crudo congelado, mantenemos la actividad enzimática de la bromelina, que se pierde en jugos pasteurizados.</p>
+        </div>
+
+        <!-- SWEET DREAMS -->
+        <div id="dreams" class="kit-card" style="border-color: var(--sweet-dreams);">
+            <h2>🌙 Sweet Dreams</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>La cereza aporta melatonina directa, mientras que la pera entrega Vitamina B6, necesaria para que tu cerebro produzca serotonina.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Tómalo 1 hora antes de dormir. Lícualo con bebida de avena para un toque reconfortante.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>La melatonina es sensible a la luz. Nuestros kits se procesan bajo protocolos que minimizan la exposición lumínica.</p>
+        </div>
+
+        <!-- DEFENSA ACTIVA -->
+        <div id="defensa" class="kit-card" style="border-color: var(--defensa-activa);">
+            <h2>🛡️ Defensa Activa</h2>
+            <h3>La Ciencia en tu Vaso</h3>
+            <p>Combinación de Beta-carotenos para la salud de las mucosas y Vitamina C para fortalecer la respuesta inmunológica.</p>
+            <h3>Sugerencia de Preparación</h3>
+            <p>Lícualo con jugo de naranja y añade una pizca de cúrcuma para potenciar el efecto antibacteriano.</p>
+            <h3>Dato de Ingeniería</h3>
+            <p>Seleccionamos materias primas en su pico de madurez fisiológica para asegurar la máxima densidad de fitonutrientes.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Milu Nutrition & Balance | Ingeniería para tu Bienestar</p>
+        <p>Medellín, Antioquia</p>
+        <p>Contacto: <a href="tel:+573003990390" class="contact-info">300 399 0390</a></p>
+    </div>
+
+    <script>
+        function showKit(id) {
+            const cards = document.querySelectorAll('.kit-card');
+            cards.forEach(card => card.style.display = 'none');
+            
+            const selected = document.getElementById(id);
+            selected.style.display = 'block';
+            selected.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
