@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milu Nutrition & Balance</title>
+    <title>Milu Nutrition & Balance | Guía de Bienestar</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -19,16 +19,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
-        .card-producto {
-            border: 3px solid #ff8c00;
-            border-radius: 24px;
-            margin: 15px;
-            padding: 20px;
-            text-align: center;
-        }
+        
+        /* Estilos de la Galería de Inicio (Arriba de todo) */
         .galeria-inicio {
-            padding: 0 15px 20px 15px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -38,13 +34,77 @@
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            display: block;
         }
+
+        /* Título de la sección de selección */
+        .seccion-seleccion {
+            text-align: center;
+            padding: 10px 15px;
+        }
+        .seccion-seleccion h1 {
+            color: #003990;
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .seccion-seleccion p {
+            color: #555555;
+            font-size: 16px;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        /* Contenedor de Botones (Desplegables) */
+        .grid-botones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 0 15px 15px 15px;
+        }
+        .btn-kit {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 5px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .btn-kit:active {
+            transform: scale(0.95);
+        }
+
+        /* Colores de los botones */
+        .btn-green { background-color: #70b324; }
+        .btn-glow { background-color: #d63384; }
+        .btn-tropical { background-color: #f0a530; }
+        .btn-reset { background-color: #a3d9c9; color: #222222; }
+        .btn-sweet { background-color: #2b3e50; }
+        .btn-defensa { background-color: #fd7e14; }
+
+        /* Contenedor de la información desplegada */
+        .info-desplegada {
+            margin: 0 15px 20px 15px;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: none; /* Se muestra con JavaScript */
+        }
+
+        /* Pie de página profesional */
         footer {
             margin-top: auto;
             padding: 25px 15px;
             text-align: center;
             border-top: 1px solid #eeeeee;
             background-color: #f9f9f9;
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.5;
         }
         footer a {
             color: #003990;
@@ -57,29 +117,105 @@
 
     <div class="container">
 
-        <!-- Sección de Producto Destacado -->
-        <div class="card-producto">
-            <h2 style="color: #111111; margin-top: 0;">🛡️ Defensa Activa</h2>
-            <h3 style="color: #003990; margin-bottom: 5px;">La Ciencia en tu Vaso</h3>
-            <p style="color: #555555; margin: 0;">Beta-carotenos y Vitamina C para tus barreras inmunológicas.</p>
-        </div>
-
-        <!-- Galería con tus nuevas fotos de MiLu -->
         <div class="galeria-inicio">
-            <img src="IMG_7518.png" alt="Logo MiLu">
-            <img src="IMG_7519.png" alt="Kits MiLu">
-            <img src="IMG_7520.png" alt="Sabores MiLu">
+            <img src="IMG_7518.png" alt="Bienvenida a Milu">
+            <img src="IMG_7519.png" alt="Kits listos para licuar">
+            <img src="IMG_7520.png" alt="6 Sabores Funcionales">
         </div>
 
-        <!-- Pie de página: Instagram en lugar de número de celular -->
+        <div class="seccion-seleccion">
+            <h1>MILU</h1>
+            <p>Selecciona tu Kit para descubrir su poder:</p>
+        </div>
+
+        <div class="grid-botones">
+            <button class="btn-kit btn-green" onclick="mostrarInfo('green')">Green Focus</button>
+            <button class="btn-kit btn-glow" onclick="mostrarInfo('glow')">Glow & Skin</button>
+            <button class="btn-kit btn-tropical" onclick="mostrarInfo('tropical')">Tropical Recovery</button>
+            <button class="btn-kit btn-reset" onclick="mostrarInfo('reset')">Reset Digest</button>
+            <button class="btn-kit btn-sweet" onclick="mostrarInfo('sweet')">Sweet Dreams</button>
+            <button class="btn-kit btn-defensa" onclick="mostrarInfo('defensa')">Defensa Activa</button>
+        </div>
+
+        <div id="caja-info" class="info-desplegada">
+            <h2 id="info-titulo" style="margin-top: 0;"></h2>
+            <h3 id="info-sub" style="color: #003990; margin-bottom: 5px;"></h3>
+            <p id="info-descripcion" style="color: #555555; margin: 0;"></p>
+        </div>
+
         <footer>
-            <p style="margin: 0 0 8px 0; font-weight: bold;">Milu Nutrition & Balance | Medellín</p>
+            <p style="margin: 0 0 5px 0; font-weight: bold; color: #333;">Milu Nutrition & Balance</p>
+            <p style="margin: 0 0 5px 0;">Luisa Vanegas | Ingeniería de Alimentos</p>
+            <p style="margin: 0 0 10px 0; font-size: 13px; color: #777;">Universidad de Antioquia | Medellín</p>
             <p style="margin: 0;">
                 Instagram: <a href="https://www.instagram.com/milu_nb11?igsh=MXgzOHAwdnByM29qNQ%3D%3D&utm_source=qr" target="_blank">@milu_nb11</a>
             </p>
         </footer>
 
     </div>
+
+    <script>
+        const datosKits = {
+            green: {
+                titulo: "🍏 Green Focus",
+                subtitulo: "Energía y concentración mental",
+                desc: "Manzana verde, espinaca, kiwi, limón. Hierro y clorofila para mantenerte alerta y enfocado.",
+                borde: "#70b324"
+            },
+            glow: {
+                titulo: "🍓 Glow & Skin",
+                subtitulo: "Tu secreto diario para brillar",
+                desc: "Fresa, mora, arándano, remolacha. Favorece la regeneración celular y la salud de la piel.",
+                borde: "#d63384"
+            },
+            tropical: {
+                titulo: "🥭 Tropical Recovery",
+                subtitulo: "Repón electrolitos post-ejercicio",
+                desc: "Mango, maracuyá, semillas de chía. Ayuda a la recuperación después de tu rutina deportiva.",
+                borde: "#f0a530"
+            },
+            reset: {
+                titulo: "🍍 Reset Digest",
+                subtitulo: "Limpieza natural para tu cuerpo",
+                desc: "Piña, apio, pepino, menta. Ayuda a la digestión y reduce la inflamación de forma natural.",
+                borde: "#a3d9c9"
+            },
+            sweet: {
+                titulo: "🍒 Sweet Dreams",
+                subtitulo: "Promueve la relajación y el descanso",
+                desc: "Cereza, pera, canela. Precursores de melatonina ideales para un sueño profundamente reparador.",
+                borde: "#2b3e50"
+            },
+            defensa: {
+                titulo: "🛡️ Defensa Activa",
+                subtitulo: "La Ciencia en tu Vaso",
+                desc: "Naranja, zanahoria, jengibre, cúrcuma. Aporte natural de Vitamina C y antioxidantes para fortalecer tus defensas.",
+                borde: "#fd7e14"
+            }
+        };
+
+        function mostrarInfo(kitKey) {
+            const kit = datosKits[kitKey];
+            const caja = document.getElementById('caja-info');
+            const titulo = document.getElementById('info-titulo');
+            const subtitulo = document.getElementById('info-sub');
+            const desc = document.getElementById('info-descripcion');
+
+            // Actualizar datos
+            titulo.innerHTML = kit.titulo;
+            subtitulo.innerHTML = kit.subtitulo;
+            desc.innerHTML = kit.desc;
+            
+            // Aplicar estilo de borde según el color del kit seleccionado
+            caja.style.border = `3px solid ${kit.borde}`;
+            
+            // Mostrar la caja con animación simple
+            caja.style.display = 'block';
+            
+            // Desplazar suavemente la pantalla para ver el resultado desplegado abajo
+            caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
 
 </body>
 </html>
