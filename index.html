@@ -3,185 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milu Nutrition & Balance | Guía de Bienestar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Milu Nutrition & Balance</title>
     <style>
-        :root {
-            --primary-blue: #1A4B82;
-            --green-focus: #76B82A;
-            --glow-skin: #D63384;
-            --tropical-recovery: #FBB03B;
-            --reset-digest: #A8D5BA;
-            --sweet-dreams: #2C3E50;
-            --defensa-activa: #FF8C00;
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333333;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-producto {
+            border: 3px solid #ff8c00;
+            border-radius: 24px;
+            margin: 15px;
             padding: 20px;
-            color: #333;
             text-align: center;
         }
-
-        header {
-            margin-bottom: 25px;
-            padding: 10px;
+        .galeria-inicio {
+            padding: 0 15px 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-
-        .logo-text {
-            color: var(--primary-blue);
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .signature {
-            font-size: 0.9rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        .intro-box {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto 30px;
-            max-width: 500px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .kit-selector {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .btn-select {
-            padding: 12px 8px;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: transform 0.2s;
-        }
-
-        .bg-green { background-color: var(--green-focus); }
-        .bg-glow { background-color: var(--glow-skin); }
-        .bg-tropical { background-color: var(--tropical-recovery); }
-        .bg-reset { background-color: var(--reset-digest); color: #333; }
-        .bg-dreams { background-color: var(--sweet-dreams); }
-        .bg-defensa { background-color: var(--defensa-activa); }
-
-        .kit-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            text-align: left;
-            border-top: 10px solid;
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .kit-img {
+        .galeria-inicio img {
             width: 100%;
             height: auto;
-            border-radius: 15px;
-            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        footer {
+            margin-top: auto;
+            padding: 25px 15px;
+            text-align: center;
+            border-top: 1px solid #eeeeee;
+            background-color: #f9f9f9;
         }
-
-        h2 { margin-top: 0; font-size: 1.4rem; color: #333; }
-        h3 { font-size: 1rem; color: var(--primary-blue); margin: 15px 0 5px 0; border-bottom: 1px solid #eee; }
-        p { font-size: 0.95rem; line-height: 1.5; margin: 0; color: #555; }
-
-        .footer {
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: #888;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
+        footer a {
+            color: #003990;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1 class="logo-text">MILU</h1>
-        <div class="signature">Por: Luisa Vanegas | Ingeniera de Alimentos UdeA</div>
-    </header>
-
-    <div class="intro-box">
-        <p>
-            <strong>Milu Nutrition & Balance</strong> nace de la ingeniería aplicada al bienestar. 
-            Kits listos para licuar, diseñados para preservar cada nutriente. Salud real y deliciosa.
-        </p>
-    </div>
-
     <div class="container">
-        <div class="kit-selector">
-            <button class="btn-select bg-green" onclick="showKit('green')">Green Focus</button>
-            <button class="btn-select bg-glow" onclick="showKit('glow')">Glow & Skin</button>
-            <button class="btn-select bg-tropical" onclick="showKit('tropical')">Tropical Recovery</button>
+
+        <!-- Sección de Producto Destacado -->
+        <div class="card-producto">
+            <h2 style="color: #111111; margin-top: 0;">🛡️ Defensa Activa</h2>
+            <h3 style="color: #003990; margin-bottom: 5px;">La Ciencia en tu Vaso</h3>
+            <p style="color: #555555; margin: 0;">Beta-carotenos y Vitamina C para tus barreras inmunológicas.</p>
         </div>
 
-        <!-- KIT 1 (Usando IMG_7518.png) -->
-        <div id="green" class="kit-card" style="border-color: var(--green-focus);">
-            <h2>🍏 Green Focus</h2>
-            <img src="IMG_7518.png" class="kit-img" alt="Kit Green Focus">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Sinergia de Hierro + Vitamina C para la oxigenación cerebral.</p>
+        <!-- Galería con tus nuevas fotos de MiLu -->
+        <div class="galeria-inicio">
+            <img src="IMG_7518.png" alt="Logo MiLu">
+            <img src="IMG_7519.png" alt="Kits MiLu">
+            <img src="IMG_7520.png" alt="Sabores MiLu">
         </div>
 
-        <!-- KIT 2 (Usando IMG_7519.png) -->
-        <div id="glow" class="kit-card" style="border-color: var(--glow-skin);">
-            <h2>💖 Glow & Skin</h2>
-            <img src="IMG_7519.png" class="kit-img" alt="Kit Glow & Skin">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Antocianinas de frutos rojos para nutrir tu piel.</p>
-        </div>
+        <!-- Pie de página: Instagram en lugar de número de celular -->
+        <footer>
+            <p style="margin: 0 0 8px 0; font-weight: bold;">Milu Nutrition & Balance | Medellín</p>
+            <p style="margin: 0;">
+                Instagram: <a href="https://www.instagram.com/milu_nb11?igsh=MXgzOHAwdnByM29qNQ%3D%3D&utm_source=qr" target="_blank">@milu_nb11</a>
+            </p>
+        </footer>
 
-        <!-- KIT 3 (Usando IMG_7520.png) -->
-        <div id="tropical" class="kit-card" style="border-color: var(--tropical-recovery);">
-            <h2>🏃‍♂️ Tropical Recovery</h2>
-            <img src="IMG_7520.png" class="kit-img" alt="Kit Tropical Recovery">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Electrolitos naturales para la recuperación post-ejercicio.</p>
-        </div>
     </div>
 
-    <div class="footer">
-        <p>Milu Nutrition & Balance | Medellín, Antioquia</p>
-        <p>Contacto: <strong>300 399 0390</strong></p>
-    </div>
-
-    <script>
-        function showKit(id) {
-            const cards = document.querySelectorAll('.kit-card');
-            cards.forEach(card => card.style.display = 'none');
-            const selected = document.getElementById(id);
-            selected.style.display = 'block';
-            selected.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    </script>
 </body>
 </html>
