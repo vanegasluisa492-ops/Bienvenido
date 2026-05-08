@@ -8,14 +8,16 @@
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8f9fa; color: #333; }
         .container { max-width: 480px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
         
+        /* Portada */
         .portada { width: 100%; height: auto; display: block; }
         
-        .leyenda { padding: 30px 25px; text-align: justify; }
-        .leyenda h2 { color: #003990; text-align: center; font-size: 22px; }
-        .leyenda p { font-size: 15px; line-height: 1.6; color: #555; }
+        .leyenda { padding: 25px; text-align: justify; }
+        .leyenda h2 { color: #003990; text-align: center; margin-bottom: 15px; }
+        .leyenda p { font-size: 15px; line-height: 1.6; color: #555; margin: 0; }
 
-        .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px; }
-        .btn-kit { border: none; border-radius: 8px; padding: 18px 5px; color: white; font-size: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        /* Botones */
+        .grid-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
+        .btn-kit { border: none; border-radius: 8px; padding: 15px 5px; color: white; font-size: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
         .btn-green { background-color: #70b324; }
         .btn-glow { background-color: #d63384; }
         .btn-tropical { background-color: #f0a530; }
@@ -23,33 +25,32 @@
         .btn-sweet { background-color: #2b3e50; }
         .btn-defensa { background-color: #fd7e14; }
 
-        .info-desplegada { margin: 10px 20px 30px 20px; padding: 20px; border-radius: 12px; display: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .info-desplegada { margin: 0 20px 20px 20px; padding: 20px; border-radius: 12px; display: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 2px solid #003990; }
 
-        .titulo-seccion { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; letter-spacing: 1px; margin-top: 20px; }
-        
-        /* Contenedor del Catálogo Individual */
-        .producto-individual { padding: 20px; border-bottom: 5px solid #f0f2f5; }
-        .crop-container { width: 100%; height: 350px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .crop-container img { width: 300%; height: 200%; object-fit: cover; }
+        /* Catálogo corregido */
+        .titulo-seccion { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; margin-top: 20px; font-weight: bold; }
+        .producto-individual { padding: 20px; border-bottom: 2px solid #eee; text-align: center; }
+        .img-producto { width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .desc-producto { font-size: 14px; line-height: 1.5; color: #444; margin: 0; }
 
-        footer { padding: 40px 20px; text-align: center; border-top: 2px solid #003990; background: #fdfdfd; font-size: 14px; }
+        footer { padding: 40px 20px; text-align: center; border-top: 2px solid #003990; background: #fdfdfd; }
         footer a { color: #003990; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 1. PORTADA (Círculo) -->
-        <img src="IMG_7518.png" class="portada" alt="Milu Portada">
+        <!-- 1. PORTADA -->
+        <img src="IMG_7518.png" class="portada" alt="Milu Medellín">
 
         <!-- 2. LEYENDA -->
         <div class="leyenda">
-            <h2>Ingeniería Nutricional</h2>
-            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería de alimentos que utiliza tecnología de congelación para preservar la integridad bioquímica de cada ingrediente.</p>
+            <h2>Ingeniería para tu Bienestar</h2>
+            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería de alimentos enfocado en la optimización nutricional mediante tecnología de conservación.</p>
         </div>
 
         <!-- 3. INTERACTIVIDAD -->
-        <div style="text-align:center; font-weight:bold; color:#003990; font-size: 14px;">ANÁLISIS TÉCNICO:</div>
+        <div style="text-align:center; font-weight:bold; color:#003990; padding-top:10px;">ANÁLISIS TÉCNICO:</div>
         <div class="grid-botones">
             <button class="btn-kit btn-green" onclick="mostrarInfo('green')">Green Focus</button>
             <button class="btn-kit btn-glow" onclick="mostrarInfo('glow')">Glow & Skin</button>
@@ -60,66 +61,23 @@
         </div>
 
         <div id="caja-info" class="info-desplegada">
-            <h3 id="info-titulo" style="margin-top:0;"></h3>
-            <p id="info-cuerpo" style="font-size:14px; color:#555;"></p>
+            <h3 id="info-titulo" style="margin:0 0 10px 0;"></h3>
+            <p id="info-cuerpo" style="margin:0;"></p>
         </div>
 
-        <!-- 4. CATÁLOGO INDIVIDUAL (Uno debajo del otro) -->
-        <div class="titulo-seccion">PORTAFOLIO INDIVIDUAL</div>
+        <!-- 4. CATÁLOGO INDIVIDUAL (Aquí se arreglaron las imágenes) -->
+        <div class="titulo-seccion">PORTAFOLIO DE PRODUCTOS</div>
 
-        <!-- Defensa Activa -->
         <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 0% 0%;">
-            </div>
-            <p><strong>Defensa Activa:</strong> Naranja, zanahoria, jengibre y cúrcuma para el refuerzo inmunológico.</p>
-        </div>
-
-        <!-- Glow & Skin -->
-        <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 50% 0%;">
-            </div>
-            <p><strong>Glow & Skin:</strong> Fresa, mora y remolacha. Alta concentración de antocianinas.</p>
-        </div>
-
-        <!-- Reset Digest -->
-        <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 100% 0%;">
-            </div>
-            <p><strong>Reset Digest:</strong> Piña, apio y pepino. Enzimas naturales para la digestión.</p>
-        </div>
-
-        <!-- Green Focus -->
-        <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 0% 100%;">
-            </div>
-            <p><strong>Green Focus:</strong> Manzana verde, espinaca y kiwi. Energía y hierro para la concentración.</p>
-        </div>
-
-        <!-- Tropical Recovery -->
-        <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 50% 100%;">
-            </div>
-            <p><strong>Tropical Recovery:</strong> Mango, maracuyá y chía. Reposición de glucógeno y electrolitos.</p>
-        </div>
-
-        <!-- Sweet Dreams -->
-        <div class="producto-individual">
-            <div class="crop-container">
-                <img src="IMG_7520.png" style="object-position: 100% 100%;">
-            </div>
-            <p><strong>Sweet Dreams:</strong> Cereza, pera y canela. Precursores de melatonina para el descanso.</p>
+            <img src="IMG_7520.png" class="img-producto">
+            <p class="desc-producto"><strong>Catálogo Completo:</strong> Nuestros 6 sabores funcionales diseñados con precisión técnica.</p>
         </div>
 
         <!-- 5. FOOTER -->
         <footer>
             <p><strong>Luisa Vanegas</strong></p>
-            <p>Ingeniería de Alimentos | Universidad de Antioquia</p>
-            <p>Medellín, Colombia</p>
+            <p>Estudiante de Ingeniería de Alimentos</p>
+            <p>Universidad de Antioquia | Medellín</p>
             <p style="margin-top:15px;">Instagram: <a href="https://www.instagram.com/milu_nb11" target="_blank">@milu_nb11</a></p>
         </footer>
     </div>
