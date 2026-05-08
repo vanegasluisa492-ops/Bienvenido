@@ -77,10 +77,7 @@
             cursor: pointer;
             font-size: 0.85rem;
             transition: transform 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .btn-select:active { transform: scale(0.95); }
 
         .bg-green { background-color: var(--green-focus); }
         .bg-glow { background-color: var(--glow-skin); }
@@ -106,7 +103,6 @@
             height: auto;
             border-radius: 15px;
             margin: 15px 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         @keyframes fadeIn {
@@ -124,12 +120,6 @@
             color: #888;
             border-top: 1px solid #ddd;
             padding-top: 20px;
-        }
-
-        .contact-info {
-            font-weight: 600;
-            color: var(--primary-blue);
-            text-decoration: none;
         }
     </style>
 </head>
@@ -152,63 +142,36 @@
             <button class="btn-select bg-green" onclick="showKit('green')">Green Focus</button>
             <button class="btn-select bg-glow" onclick="showKit('glow')">Glow & Skin</button>
             <button class="btn-select bg-tropical" onclick="showKit('tropical')">Tropical Recovery</button>
-            <button class="btn-select bg-reset" onclick="showKit('reset')">Reset Digest</button>
-            <button class="btn-select bg-dreams" onclick="showKit('dreams')">Sweet Dreams</button>
-            <button class="btn-select bg-defensa" onclick="showKit('defensa')">Defensa Activa</button>
         </div>
 
-        <!-- KIT GREEN -->
+        <!-- KIT 1 (Usando IMG_7518.png) -->
         <div id="green" class="kit-card" style="border-color: var(--green-focus);">
             <h2>🍏 Green Focus</h2>
-            <img src="green.png" class="kit-img" alt="Kit Green Focus">
+            <img src="IMG_7518.png" class="kit-img" alt="Kit Green Focus">
             <h3>La Ciencia en tu Vaso</h3>
             <p>Sinergia de Hierro + Vitamina C para la oxigenación cerebral.</p>
         </div>
 
-        <!-- KIT GLOW -->
+        <!-- KIT 2 (Usando IMG_7519.png) -->
         <div id="glow" class="kit-card" style="border-color: var(--glow-skin);">
             <h2>💖 Glow & Skin</h2>
-            <img src="glow.png" class="kit-img" alt="Kit Glow & Skin">
+            <img src="IMG_7519.png" class="kit-img" alt="Kit Glow & Skin">
             <h3>La Ciencia en tu Vaso</h3>
             <p>Antocianinas de frutos rojos para nutrir tu piel.</p>
         </div>
 
-        <!-- KIT TROPICAL -->
+        <!-- KIT 3 (Usando IMG_7520.png) -->
         <div id="tropical" class="kit-card" style="border-color: var(--tropical-recovery);">
             <h2>🏃‍♂️ Tropical Recovery</h2>
-            <img class="kit-img" src="tropical.png" alt="Kit Tropical Recovery">
+            <img src="IMG_7520.png" class="kit-img" alt="Kit Tropical Recovery">
             <h3>La Ciencia en tu Vaso</h3>
             <p>Electrolitos naturales para la recuperación post-ejercicio.</p>
-        </div>
-
-        <!-- KIT RESET -->
-        <div id="reset" class="kit-card" style="border-color: var(--reset-digest);">
-            <h2>🍍 Reset Digest</h2>
-            <img class="kit-img" src="reset.png" alt="Kit Reset Digest">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Bromelina natural para facilitar la digestión.</p>
-        </div>
-
-        <!-- KIT DREAMS -->
-        <div id="dreams" class="kit-card" style="border-color: var(--sweet-dreams);">
-            <h2>🌙 Sweet Dreams</h2>
-            <img class="kit-img" src="dreams.png" alt="Kit Sweet Dreams">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Melatonina natural para ayudar a tu descanso.</p>
-        </div>
-
-        <!-- KIT DEFENSA -->
-        <div id="defensa" class="kit-card" style="border-color: var(--defensa-activa);">
-            <h2>🛡️ Defensa Activa</h2>
-            <img class="kit-img" src="defensa.png" alt="Kit Defensa Activa">
-            <h3>La Ciencia en tu Vaso</h3>
-            <p>Beta-carotenos y Vitamina C para tus barreras inmunológicas.</p>
         </div>
     </div>
 
     <div class="footer">
         <p>Milu Nutrition & Balance | Medellín, Antioquia</p>
-        <p>Contacto: <a href="tel:+573003990390" class="contact-info">300 399 0390</a></p>
+        <p>Contacto: <strong>300 399 0390</strong></p>
     </div>
 
     <script>
