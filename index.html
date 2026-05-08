@@ -56,12 +56,6 @@
             line-height: 1.6;
         }
 
-        .intro-box p {
-            font-size: 1rem;
-            color: #444;
-            margin: 0;
-        }
-
         .container {
             max-width: 500px;
             margin: 0 auto;
@@ -107,6 +101,14 @@
             animation: fadeIn 0.5s;
         }
 
+        .kit-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -141,14 +143,11 @@
     <div class="intro-box">
         <p>
             <strong>Milu Nutrition & Balance</strong> nace de la ingeniería aplicada al bienestar. 
-            Creamos kits de frutas y verduras listos para licuar, diseñados bajo procesos técnicos 
-            que preservan cada nutriente. Salud real, conveniente y deliciosa para tu día a día.
+            Kits listos para licuar, diseñados para preservar cada nutriente. Salud real y deliciosa.
         </p>
     </div>
 
     <div class="container">
-        <p style="margin-bottom: 15px;"><strong>Selecciona tu Kit para descubrir su poder:</strong></p>
-        
         <div class="kit-selector">
             <button class="btn-select bg-green" onclick="showKit('green')">Green Focus</button>
             <button class="btn-select bg-glow" onclick="showKit('glow')">Glow & Skin</button>
@@ -158,64 +157,52 @@
             <button class="btn-select bg-defensa" onclick="showKit('defensa')">Defensa Activa</button>
         </div>
 
+        <!-- KIT GREEN -->
         <div id="green" class="kit-card" style="border-color: var(--green-focus);">
             <h2>🍏 Green Focus</h2>
+            <img src="green.png" class="kit-img" alt="Kit Green Focus">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>Sinergia de Hierro + Vitamina C. La espinaca aporta hierro para la oxigenación cerebral, mientras que el kiwi y limón aseguran su máxima absorción.</p>
-            <h3>Sugerencia</h3>
-            <p>Lícualo con agua de coco fría o agua mineral.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Controlamos la oxidación mediante un proceso de picado y congelación inmediata.</p>
+            <p>Sinergia de Hierro + Vitamina C para la oxigenación cerebral.</p>
         </div>
 
+        <!-- KIT GLOW -->
         <div id="glow" class="kit-card" style="border-color: var(--glow-skin);">
             <h2>💖 Glow & Skin</h2>
+            <img src="glow.png" class="kit-img" alt="Kit Glow & Skin">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>Los nitratos de la remolacha mejoran la circulación capilar, permitiendo que las antocianinas de los frutos rojos nutran tu piel.</p>
-            <h3>Sugerencia</h3>
-            <p>Lícualo con leche de almendras o yogurt griego.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Preservación de betalaínas activas para la regeneración celular.</p>
+            <p>Antocianinas de frutos rojos para nutrir tu piel.</p>
         </div>
 
+        <!-- KIT TROPICAL -->
         <div id="tropical" class="kit-card" style="border-color: var(--tropical-recovery);">
             <h2>🏃‍♂️ Tropical Recovery</h2>
+            <img class="kit-img" src="tropical.png" alt="Kit Tropical Recovery">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>Carga de electrolitos naturales (Potasio y Magnesio) y Omega-3 de la chía para reducir la inflamación post-ejercicio.</p>
-            <h3>Sugerencia</h3>
-            <p>Ideal con agua de coco para reponer energía.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Uso de agentes hidrofílicos naturales para una hidratación celular prolongada.</p>
+            <p>Electrolitos naturales para la recuperación post-ejercicio.</p>
         </div>
 
+        <!-- KIT RESET -->
         <div id="reset" class="kit-card" style="border-color: var(--reset-digest);">
             <h2>🍍 Reset Digest</h2>
+            <img class="kit-img" src="reset.png" alt="Kit Reset Digest">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>Contiene bromelina natural de la piña fresca, una enzima que facilita la digestión y reduce la inflamación.</p>
-            <h3>Sugerencia</h3>
-            <p>Mézclalo con agua y un toque de jengibre.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Mantenemos la actividad enzimática intacta al evitar procesos térmicos agresivos.</p>
+            <p>Bromelina natural para facilitar la digestión.</p>
         </div>
 
+        <!-- KIT DREAMS -->
         <div id="dreams" class="kit-card" style="border-color: var(--sweet-dreams);">
             <h2>🌙 Sweet Dreams</h2>
+            <img class="kit-img" src="dreams.png" alt="Kit Sweet Dreams">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>La cereza aporta melatonina natural, mientras que la pera entrega Vitamina B6 para ayudar a tu descanso.</p>
-            <h3>Sugerencia</h3>
-            <p>Tómalo 1 hora antes de dormir con bebida de avena tibia.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Protección de fitohormonas mediante control de exposición lumínica.</p>
+            <p>Melatonina natural para ayudar a tu descanso.</p>
         </div>
 
+        <!-- KIT DEFENSA -->
         <div id="defensa" class="kit-card" style="border-color: var(--defensa-activa);">
             <h2>🛡️ Defensa Activa</h2>
+            <img class="kit-img" src="defensa.png" alt="Kit Defensa Activa">
             <h3>La Ciencia en tu Vaso</h3>
-            <p>Combinación de Beta-carotenos y Vitamina C para fortalecer tus barreras inmunológicas.</p>
-            <h3>Sugerencia</h3>
-            <p>Lícualo con jugo de naranja y una pizca de cúrcuma.</p>
-            <h3>Ingeniería Milu</h3>
-            <p>Selección de materias primas en punto óptimo de madurez nutricional.</p>
+            <p>Beta-carotenos y Vitamina C para tus barreras inmunológicas.</p>
         </div>
     </div>
 
