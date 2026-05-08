@@ -8,13 +8,14 @@
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8f9fa; color: #333; }
         .container { max-width: 480px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
         
-        /* PORTADA ARRIBA: EL CÍRCULO HOLA MEDELLÍN */
-        .portada-principal { width: 100%; height: auto; display: block; }
+        /* PORTADA: HOLA MEDELLÍN ARRIBA */
+        .portada-top { width: 100%; height: auto; display: block; }
         
         .leyenda { padding: 25px; text-align: center; }
         .leyenda h2 { color: #003990; margin-bottom: 10px; }
         .leyenda p { font-size: 15px; line-height: 1.6; color: #555; text-align: justify; }
 
+        /* SECCIÓN INTERACTIVA */
         .seccion-interactiva { padding: 0 20px 20px 20px; }
         .titulo-analisis { text-align: center; font-weight: bold; color: #003990; margin-bottom: 15px; }
         
@@ -32,26 +33,25 @@
         .info-desplegada h3 { margin: 0 0 10px 0; font-size: 18px; }
         .info-desplegada p { margin: 5px 0; font-size: 14px; line-height: 1.4; }
 
-        /* PORTAFOLIO ABAJO: LOS 6 PAQUETES */
+        /* PORTAFOLIO: LOS 6 PAQUETES ABAJO */
         .titulo-portafolio { background: #003990; color: white; padding: 15px; text-align: center; font-size: 18px; font-weight: bold; margin-top: 20px; }
-        .img-portafolio-final { width: 100%; display: block; }
+        .img-bottom { width: 100%; display: block; }
 
-        footer { padding: 30px 20px; text-align: center; border-top: 1px solid #eee; background: #fff; }
+        footer { padding: 30px 20px; text-align: center; border-top: 1px solid #eee; }
         footer a { color: #003990; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 1. PORTADA ARRIBA (Círculo ¡Hola Medellín!) -->
-        <img src="IMG_7518.png" class="portada-principal" alt="Portada Milu Medellín">
+        <!-- 1. IMAGEN HOLA MEDELLÍN (PORTADA) -->
+        <img src="IMG_7518.png?v=2" class="portada-top">
 
         <div class="leyenda">
             <h2>Ingeniería para tu Bienestar</h2>
-            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería enfocado en optimizar la nutrición diaria. Aplicamos procesos técnicos para asegurar que cada kit conserve sus propiedades funcionales de forma natural.</p>
+            <p><strong>Milu Nutrition & Balance</strong> es un desarrollo de ingeniería de alimentos enfocado en la optimización nutricional mediante tecnología de conservación.</p>
         </div>
 
-        <!-- 2. ANÁLISIS TÉCNICO E INTERACTIVIDAD -->
         <div class="seccion-interactiva">
             <div class="titulo-analisis">ANÁLISIS TÉCNICO:</div>
             <div class="grid-botones">
@@ -71,12 +71,11 @@
             </div>
         </div>
 
-        <!-- 3. PORTAFOLIO ABAJO (Los 6 paquetes alineados) -->
+        <!-- 2. IMAGEN DE LOS 6 PAQUETES (PORTAFOLIO) -->
         <div class="titulo-portafolio">PORTAFOLIO DE PRODUCTOS</div>
-        <img src="IMG_7520.png" class="img-portafolio-final" alt="Portafolio Milu">
-        <p style="text-align:center; font-size:14px; padding:15px 20px; color:#555;">Kits de frutas y verduras 100% naturales, picados y congelados listos para licuar.</p>
+        <img src="IMG_7520.png?v=2" class="img-bottom">
+        <p style="text-align:center; font-size:14px; padding:15px 20px; color:#555;">Kits naturales diseñados con precisión técnica para tu salud.</p>
 
-        <!-- 4. FOOTER -->
         <footer>
             <p><strong>Luisa Vanegas</strong></p>
             <p>Estudiante de Ingeniería de Alimentos - UdeA</p>
@@ -86,44 +85,20 @@
 
     <script>
         const kits = {
-            green: { 
-                t: "🍏 Green Focus", 
-                i: "Ingredientes: Manzana verde, espinaca, kiwi, limón.",
-                b: "Beneficio: Aporte natural de hierro y clorofila para mantenerte alerta, enfocado y con energía mental." 
-            },
-            glow: { 
-                t: "🍓 Glow & Skin", 
-                i: "Ingredientes: Fresa, mora, arándano, remolacha.",
-                b: "Beneficio: Favorece la regeneración celular y la salud de la piel. Tu secreto diario para una piel radiante." 
-            },
-            tropical: { 
-                t: "🥭 Tropical Recovery", 
-                i: "Ingredientes: Mango, maracuyá, semillas de chía.",
-                b: "Beneficio: Ayuda a la recuperación post-ejercicio, reponiendo electrolitos y energía de forma natural." 
-            },
-            reset: { 
-                t: "🍍 Reset Digest", 
-                i: "Ingredientes: Piña, apio, pepino, menta.",
-                b: "Beneficio: Ayuda a la digestión y reduce la inflamación. Una limpieza natural para tu cuerpo." 
-            },
-            sweet: { 
-                t: "🍒 Sweet Dreams", 
-                i: "Ingredientes: Cereza, pera, canela.",
-                b: "Beneficio: Contiene precursores de melatonina que promueven la relajación y un sueño reparador." 
-            },
-            defensa: { 
-                t: "🛡️ Defensa Activa", 
-                i: "Ingredientes: Naranja, zanahoria, jengibre, cúrcuma.",
-                b: "Beneficio: Aporte natural de Vitamina C y antioxidantes que ayudan a fortalecer el sistema inmunológico." 
-            }
+            green: { t: "🍏 Green Focus", i: "Manzana verde, espinaca, kiwi, limón", b: "Aporte de hierro y clorofila para la energía mental." },
+            glow: { t: "🍓 Glow & Skin", i: "Fresa, mora, arándano, remolacha", b: "Favorece la regeneración celular y salud de la piel." },
+            tropical: { t: "🥭 Tropical Recovery", i: "Mango, maracuyá, semillas de chía", b: "Repone electrolitos y energía de forma natural." },
+            reset: { t: "🍍 Reset Digest", i: "Piña, apio, pepino, menta", b: "Ayuda a la digestión y reduce la inflamación." },
+            sweet: { t: "🍒 Sweet Dreams", i: "Cereza, pera, canela", b: "Precursores de melatonina para un sueño reparador." },
+            defensa: { t: "🛡️ Defensa Activa", i: "Naranja, zanahoria, jengibre, cúrcuma", b: "Vitamina C y gingerol para el sistema inmunitario." }
         };
 
         function mostrarInfo(k) {
             const info = kits[k];
             const caja = document.getElementById('caja-info');
             document.getElementById('info-titulo').innerHTML = info.t;
-            document.getElementById('info-ingredientes').innerHTML = info.i;
-            document.getElementById('info-beneficio').innerHTML = info.b;
+            document.getElementById('info-ingredientes').innerHTML = "<b>Ingredientes:</b> " + info.i;
+            document.getElementById('info-beneficio').innerHTML = "<b>Beneficio Técnico:</b> " + info.b;
             caja.style.display = 'block';
             caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
